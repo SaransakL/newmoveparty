@@ -377,13 +377,12 @@ footer {
     bottom: 40px;
     left: 100px;
     color: #fff;
-    max-width: 800px;
+
 }
 
 .hero-text h1 {
     font-size: 3rem;
     margin: 10px 0 0 0;
-    max-width: 800px;
 }
 
 .hero-text p {
@@ -487,6 +486,16 @@ footer {
 
 .copy-status.show {
     opacity: 1;
+}
+
+.alert {
+    width: 100%;
+    overflow: hidden;
+    background: #dd0000;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 0;
+    text-align: center;
 }
 
 @media (max-width: 480px) {

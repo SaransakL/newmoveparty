@@ -1,0 +1,559 @@
+* {
+    font-family: 'IBM Plex Sans Thai';
+    transition: 0.2s ease;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 100px;
+    background-color: #333;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav a {
+    margin-left: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 1;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.offcanvas {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: 0.5s ease;
+    z-index: 2000;
+}
+
+.offcanvas a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.offcanvas a.active {
+    color: #ffc000;
+}
+
+.offcanvas.active {
+    right: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+main {
+    padding: 0px 100px;
+}
+
+section {
+    padding: 25px 0px;
+}
+
+.hero img {
+    width: 100%;
+    aspect-ratio: 20/9;
+    object-fit: cover;
+}
+
+header nav a:hover, header nav a.active {
+    color: #ffc000;
+}
+
+.logo {
+    height: 3rem;
+}
+
+.heading {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.board-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:50px;
+}
+
+.board-card{
+    text-align:left;
+    text-decoration: none;
+}
+
+.board-card img{
+    width:100%;
+    background: linear-gradient(to bottom, #ffc000, #ffdd75);
+    border-radius: 12px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.board-card h3{
+    color:#000;
+    font-size:2rem;
+    margin:10px 0 5px 0;
+    line-height:1.2;
+}
+
+.board-card h3 span {
+    font-size: 1.5rem;
+}
+
+.board-card p{
+    font-size:1.25rem;
+    color:#555;
+    display:block;
+    margin:0;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 50px;
+}
+
+.contact{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-weight:600;
+    margin-bottom:5px;
+    font-size:1.2rem;
+}
+
+.form-group input,
+.form-group textarea{
+    padding:12px;
+    font-size:1rem;
+    border-radius:12px;
+    border:2px solid #ccc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    outline:none;
+    border:2px solid #ffc000;
+}
+
+.btn-submit{
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    background: linear-gradient(to bottom, #ffc000, #ffdd75);
+    border: 3px solid #ffc000;
+    font-size: 1.5rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+}
+
+.news-card {
+    background: #f5f5f5;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.news-card:hover {
+    transform: scale(1.1);
+}
+
+.news-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    color: #000;
+    margin-bottom: -10px;
+}
+
+.news-content span {
+    color: #000;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.news-content i {
+    font-size: 0;
+}
+
+.news-card:hover .news-content i {
+    font-size: 1.25rem;
+}
+
+.news-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-more {
+    padding: 5px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    background: linear-gradient(to bottom, #ffc000, #ffdd75);
+    border: 3px solid #ffc000;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.btn-more i {
+    font-size: 0;
+}
+
+.btn-more:hover {
+    transform: scale(1.1);
+}
+
+.btn-more:hover i {
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.policy-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    cursor: pointer;
+    color: #000;
+    background: linear-gradient(to bottom, #ffc000, #ffdd75);
+    border: 3px solid #ffc000;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.accordion-header .icon {
+    font-size: 2rem;
+    transition: 0.3s;
+    color: #000;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    padding: 0 25px;
+    transition: 0.5s ease;
+}
+
+.accordion-content p {
+    margin: 15px 0;
+    line-height: 1.6;
+    white-space: pre-line;
+    font-size: 1rem;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+    padding: 20px 25px;
+    background-color: #f5f5f5;
+}
+
+.accordion-item.active .icon {
+    transform: rotate(45deg);
+}
+
+.post-hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.post-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: #00000080
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    color: #fff;
+    max-width: 800px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin: 10px 0 0 0;
+    max-width: 800px;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.post-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.post-box {
+    max-width: 800px;
+    padding: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.post-box h2 {
+    margin-top: 30px;
+    font-size: 1.8rem;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.lead {
+    font-size: 1.2rem;
+}
+
+.quote {
+    border-left: 4px solid #ffc000;
+    padding-left: 15px;
+    margin: 20px 0;
+    color: #555;
+}
+
+.list-icon i {
+    color: #ffc000;
+    margin-right: 10px;
+}
+
+.highlight {
+    padding: 0px 10px;
+    background-color: #ffc000;
+    font-weight: 600;
+}
+
+.share-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.share-btn.fb {
+    background: #1877f2;
+    color: #fff;
+}
+
+.share-btn.tw {
+    background: #000;
+    color: #fff;
+}
+
+.share-btn.copy {
+    background: #eee;
+    color: #333;
+}
+
+.share-btn:hover {
+    opacity: 0.8;
+}
+
+.copy-status {
+    display: block;
+    margin-top: 8px;
+    color: green;
+    font-size: 1rem;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.copy-status.show {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+    
+    main {
+        padding: 20px 20px;
+    }
+
+    .hero img {
+        aspect-ratio: 16/9;
+    }
+    
+    .heading {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .board-grid{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+        gap:20px;
+    }
+
+    .board-card h3{
+        color:#000;
+        font-size:1.5rem;
+        margin:10px 0 5px 0;
+        line-height:1.2;
+    }
+
+    .board-card h3 span {
+        font-size: 1rem;
+    }
+
+    .board-card p{
+        font-size:1rem;
+        color:#555;
+        display:block;
+        margin:0;
+    }
+
+    .accordion-header h3 {
+        font-size: 1.5rem;
+    }
+
+.hero-text {
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .post-box {
+        padding: 20px;
+    }
+    
+}

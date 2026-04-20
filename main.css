@@ -498,6 +498,66 @@ footer {
     text-align: center;
 }
 
+.notfound {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.notfound h1 {
+    font-size: 8rem;
+    margin: 0;
+    font-weight: 900;
+    color: #ffc000;
+}
+
+.notfound h2 {
+    font-size: 2rem;
+    margin: 10px 0 20px;
+}
+
+.notfound p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.notfound-actions {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-home {
+    padding: 10px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    background: linear-gradient(to bottom, #ffc000, #ffdd75);
+    border: 3px solid #ffc000;
+    font-size: 1.2rem;
+}
+
+.btn-secondary {
+    padding: 10px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    background: linear-gradient(to bottom, #ccc, #eee);
+    border: 3px solid #ccc;
+    font-size: 1.2rem;
+}
+
+.btn-home:hover,
+.btn-secondary:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 480px) {
     header {
         padding: 10px 20px;

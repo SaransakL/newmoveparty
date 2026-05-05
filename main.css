@@ -90,11 +90,40 @@ section {
     padding: 25px 0px;
 }
 
-.hero img {
-    width: 100%;
-    aspect-ratio: 20/9;
-    object-fit: cover;
+.slider {
+  position: relative;
+  overflow: hidden;
 }
+
+.slides {
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  aspect-ratio: 20/9;
+  object-fit: cover;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 50px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
 
 header nav a:hover, header nav a.active {
     color: #ffc000;
@@ -636,8 +665,16 @@ footer {
         padding: 20px 20px;
     }
 
-    .hero img {
-        aspect-ratio: 16/9;
+    .slide img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    }
+
+    .prev, .next {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
     }
     
     .heading {

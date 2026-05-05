@@ -1,3 +1,27 @@
+const slides = document.querySelector('.slides');
+const slide = document.querySelectorAll('.slide');
+
+let index = 0;
+
+document.querySelector('.next').onclick = () => {
+  index = (index + 1) % slide.length;
+  updateSlide();
+};
+
+document.querySelector('.prev').onclick = () => {
+  index = (index - 1 + slide.length) % slide.length;
+  updateSlide();
+};
+
+function updateSlide() {
+  slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+/* Auto slide */
+setInterval(() => {
+  index = (index + 1) % slide.length;
+  updateSlide();
+}, 5000);
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

@@ -1,5 +1,5 @@
-if (!window.location.pathname.endsWith("/maintenance.html")) {
-    window.location.replace("/maintenance.html");
+if (!window.location.pathname.endsWith("../maintenance.html")) {
+    window.location.replace("../maintenance.html");
 }
 
 document.addEventListener("DOMContentLoaded", () => {

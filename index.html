@@ -17,11 +17,6 @@
     <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <header>
@@ -31,7 +26,6 @@
             <a href="/policy.html">นโยบาย</a>
             <a href="/mp.html">ส.ส. พรรค</a>
             <a href="/about.html">เกี่ยวกับพรรค</a>
-            <a href="/contact.html">ติดต่อเรา</a>
         </nav>
         <div class="menu-btn bi bi-list" onclick="toggleMenu()"></div>
         <div class="offcanvas" id="offcanvas">
@@ -41,45 +35,51 @@
             <a href="/policy.html">นโยบาย</a>
             <a href="/mp.html">ส.ส. พรรค</a>
             <a href="/about.html">เกี่ยวกับพรรค</a>
-            <a href="/contact.html">ติดต่อเรา</a>
         </div>
     </header>
 
     <div class="slider">
         <div class="slides">
-            <div class="slide">
-            <img src="assets/hero.png" alt="">
-            </div>
-            
-            <a href="discord.html" target="_blank" class="slide">
-            <img src="assets/เข้าร่วมดิสคอร์ด.png" alt="">
+
+            <a class="slide">
+                <img src="assets/hero.png" alt="">
             </a>
+
+            <a href="https://www.the101.world/parliament-roleplay-roblox-vdo/" target="_blank" class="slide">
+                <img src="https://media.the101.world/wp-content/uploads/2026/08/06121516/1785993313_445372-the101world.avif" alt="">
+            </a>
+
         </div>
 
-        <button class="prev"><i class="bi bi-chevron-left"></i></button>
-        <button class="next"><i class="bi bi-chevron-right"></i></button>
+        <button class="prev">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <button class="next">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+
+        <div class="dots"></div>
     </div>
 
     <main>
 
         <section class="news">
 
-            <div class="heading">ความเคลื่อนไหวจากพรรค</div>
+            <div class="heading">ข่าวสารจากพรรค</div>
 
-            <i>Blog not found</i>
+            <div class="news-grid">
 
-            <!--div class="news-grid">
-
-                <a href="/blog/การเปลี่ยนแปลงทีมบริหารพรรค-ครั้งที่-3.html" class="news-card hidden">
-                    <img src="assets/hero.png" alt="">
+                <a href="/news/พรรคก้าวใหม่ลงพื้นที่จังหวัดเชียงราย.html" class="news-card hidden">
+                    <img src="assets/1786768515235.png" alt="">
                     <div class="news-content">
-                        <p>3 พฤษภาคม 2569</p>
-                        <h3>การเปลี่ยนแปลงทีมบริหารพรรค ครั้งที่ 3</h3>
+                        <p>15 สิงหาคม 2569</p>
+                        <h3>พรรคก้าวใหม่ลงพื้นที่จังหวัดเชียงราย</h3>
                         <span>อ่านต่อ <i class="bi bi-arrow-up-right"></i></span>
                     </div>
                 </a>
 
-                <a href="/blog/ประกาศ-พระบรมราชโองการโปรดเกล้าโปรดกระหม่อมแต่งตั้งรัฐมนตรี.html" class="news-card hidden">
+                <a href="/news/ประกาศ-พระบรมราชโองการโปรดเกล้าโปรดกระหม่อมแต่งตั้งรัฐมนตรี.html" class="news-card hidden">
                     <img src="assets/รัฐบาลก้าวใหม่.png" alt="">
                     <div class="news-content">
                         <p>1 พฤษภาคม 2569</p>
@@ -88,7 +88,7 @@
                     </div>
                 </a>
 
-                <a href="/blog/การศึกษาไทย-เท่าเทียม-หรือแค่คำโกหกที่สวยงาม.html" class="news-card hidden">
+                <a href="/news/การศึกษาไทย-เท่าเทียม-หรือแค่คำโกหกที่สวยงาม.html" class="news-card hidden">
                     <img src="assets/a8f069eb4c872a8b.png" alt="">
                     <div class="news-content">
                         <p>17 เมษายน 2569</p>
@@ -97,7 +97,7 @@
                     </div>
                 </a>
 
-                <a href="/blog/test.html" class="news-card hidden">
+                <a href="/news/test.html" class="news-card hidden">
                     <img src="assets/hero.png" alt="">
                     <div class="news-content">
                         <p>1 มกราคม 2543</p>
@@ -106,9 +106,10 @@
                     </div>
                 </a>
 
-        </div-->
+            </div>
 
         </section>
+
     </main>
 
     <footer>

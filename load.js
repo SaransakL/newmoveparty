@@ -1,56 +1,58 @@
-window.location="maintenance.html";
-
 document.addEventListener("DOMContentLoaded", () => {
 
   // ================= SLIDER =================
   const slides = document.querySelector('.slides');
   const slide = document.querySelectorAll('.slide');
 
-  let index = 0;
-
-  function updateSlide() {
-    if (!slides) return;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  }
-
   const nextBtn = document.querySelector('.next');
   const prevBtn = document.querySelector('.prev');
+  const dotsContainer = document.querySelector('.dots');
+
+  let index = 0;
+
+  // สร้างจุด
+  slide.forEach((_, i) => {
+      const dot = document.createElement('button');
+
+      dot.classList.add('dot');
+      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+
+      dot.addEventListener('click', () => {
+          index = i;
+          updateSlide();
+      });
+
+      dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('.dot');
+
+  function updateSlide() {
+      if (!slides) return;
+
+      slides.style.transform = `translateX(-${index * 100}%)`;
+
+      dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+      });
+  }
 
   if (nextBtn) {
-    nextBtn.onclick = () => {
-      index = (index + 1) % slide.length;
-      updateSlide();
-    };
+      nextBtn.onclick = () => {
+          index = (index + 1) % slide.length;
+          updateSlide();
+      };
   }
 
   if (prevBtn) {
-    prevBtn.onclick = () => {
-      index = (index - 1 + slide.length) % slide.length;
-      updateSlide();
-    };
+      prevBtn.onclick = () => {
+          index = (index - 1 + slide.length) % slide.length;
+          updateSlide();
+      };
   }
 
-  if (slide.length > 0) {
-    setInterval(() => {
-      index = (index + 1) % slide.length;
-      updateSlide();
-    }, 5000);
-  }
-
-  // ================= ANIMATION =================
-  const hiddenElements = document.querySelectorAll('.hidden');
-
-  if (hiddenElements.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    });
-
-    hiddenElements.forEach(el => observer.observe(el));
-  }
+  // เริ่มต้นที่ Slide แรก
+  updateSlide();
 
   // ================= MENU =================
   window.toggleMenu = function () {
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.innerHTML = `
           <div class="accordion-header">
             <h3>${policy.title}</h3>
-            <span class="icon">+</span>
+            <span class="icon"><i class="bi bi-plus"></i></span>
           </div>
           <div class="accordion-content">
             <p>${policy.description}</p>
@@ -112,21 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadPolicies();
-
-  // ================= SHARE =================
-  const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent(document.title);
-
-  const fb = document.getElementById("share-fb");
-  const tw = document.getElementById("share-tw");
-
-  if (fb) {
-    fb.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-  }
-
-  if (tw) {
-    tw.href = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-  }
 
   // ================= COPY =================
   const copyBtn = document.getElementById("copy-link");

@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&display=swap);
+@import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css);
+
 * {
-    font-family: 'IBM Plex Sans Thai';
+    font-family: 'Athiti';
     transition: 0.2s ease;
 }
 
@@ -14,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:10px 100px;
+    padding:10px 200px;
     background-color: #333;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 
@@ -23,12 +26,18 @@ header {
     z-index: 1000;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 header nav a {
-    margin-left: 5px;
     text-decoration: none;
     color: #fff;
-    font-size: 1.25rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 500;
     opacity: 1;
     cursor: pointer;
     margin-left: 20px;
@@ -44,24 +53,24 @@ header nav a {
 .offcanvas {
     position: fixed;
     top: 0;
-    right: -250px;
-    width: 250px;
+    right: -350px;
+    width: 300px;
     height: 100%;
     background-color: #333;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     padding-top: 80px;
-    transition: 0.5s ease;
+    transition: 0.4s ease;
     z-index: 2000;
 }
 
 .offcanvas a {
     color: #fff;
     text-decoration: none;
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    font-weight: 400;
+    padding: 15px 40px;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .offcanvas a.active {
@@ -83,7 +92,7 @@ header nav a {
 }
 
 main {
-    padding: 0px 100px;
+    padding: 0px 200px;
 }
 
 section {
@@ -91,41 +100,78 @@ section {
 }
 
 .slider {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .slides {
-  display: flex;
-  transition: transform 1s ease;
+    display: flex;
+    transition: transform 1s ease;
 }
 
 .slide {
-  min-width: 100%;
+    min-width: 100%;
 }
 
 .slide img {
-  width: 100%;
-  aspect-ratio: 20/9;
-  object-fit: cover;
+    width: 100%;
+    aspect-ratio: 20 / 9;
+    object-fit: cover;
 }
 
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  color: #fff;
-  border: none;
-  font-size: 50px;
-  padding: 10px;
-  cursor: pointer;
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 40px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev {
+    left: 10px;
+}
 
-header nav a:hover, header nav a.active {
+.next {
+    right: 10px;
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 32px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+header nav a.active {
     color: #ffc000;
 }
 
@@ -136,13 +182,13 @@ header nav a:hover, header nav a.active {
 .heading {
     font-size: 4rem;
     font-weight: 900;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .board-grid{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap:50px;
+    gap:40px;
 }
 
 .board-card{
@@ -152,7 +198,7 @@ header nav a:hover, header nav a.active {
 
 .board-card img{
     width:100%;
-    background: linear-gradient(to bottom, #ffc000, #ffdd75);
+    background: #ffc000;
     border-radius: 12px;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -160,17 +206,18 @@ header nav a:hover, header nav a.active {
 
 .board-card h3{
     color:#000;
-    font-size:1.75rem;
+    font-size: 2.5rem;
     margin:10px 0 5px 0;
     line-height:1.2;
 }
 
 .board-card h3 span {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .board-card p{
-    font-size:1.25rem;
+    font-weight: 500;
+    font-size:1.5rem;
     color:#555;
     display:block;
     margin:0;
@@ -249,8 +296,6 @@ footer {
 }
 
 .news-card {
-    background: #f5f5f5;
-    border-radius: 12px;
     overflow: hidden;
     text-decoration: none;
 }
@@ -258,11 +303,8 @@ footer {
 .news-card img {
     width: 100%;
     aspect-ratio: 16/9;
+    border-radius: 12px;
     object-fit: cover;
-}
-
-.news-content {
-    padding: 20px;
 }
 
 .news-content h3 {
@@ -277,46 +319,12 @@ footer {
 
 .news-content span {
     color: #000;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.25rem;
 }
 
-.news-content i {
-    font-size: 0;
-}
-
-.news-card:hover .news-content i {
-    font-size: 1.25rem;
-}
-
-.news-more {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.btn-more {
-    padding: 5px 20px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    color: #000;
-    background: linear-gradient(to bottom, #ffc000, #ffdd75);
-    border: 3px solid #ffc000;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.btn-more i {
-    font-size: 0;
-}
-
-.btn-more:hover {
+.news-card:hover {
     transform: scale(1.1);
-}
-
-.btn-more:hover i {
-    font-size: 1.5rem;
-    margin-left: 10px;
 }
 
 .policy-grid {
@@ -326,10 +334,8 @@ footer {
 }
 
 .accordion-item {
-    background: #333;
-    border-radius: 12px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.4s ease;
 }
 
 .accordion-header {
@@ -339,8 +345,12 @@ footer {
     padding: 20px 25px;
     cursor: pointer;
     color: #000;
-    background: linear-gradient(to bottom, #ffc000, #ffdd75);
-    border: 3px solid #ffc000;
+    background: #f5f5f5;
+    border-radius: 12px;
+}
+
+.accordion-item.active .accordion-header, .accordion-header:hover {
+    background: #ffc000;
 }
 
 .accordion-header h3 {
@@ -357,23 +367,22 @@ footer {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    background: #fff;
-    color: #333;
+    color: #000;
     padding: 0 25px;
-    transition: 0.5s ease;
+    transition: 0.6s ease;
 }
 
 .accordion-content p {
     margin: 15px 0;
     line-height: 1.6;
     white-space: pre-line;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 .accordion-item.active .accordion-content {
     max-height: 1000px;
     padding: 20px 25px;
-    background-color: #f5f5f5;
 }
 
 .accordion-item.active .icon {
@@ -484,23 +493,13 @@ footer {
     border: none;
 }
 
-.share-btn.fb {
-    background: #1877f2;
-    color: #fff;
-}
-
-.share-btn.tw {
-    background: #000;
-    color: #fff;
-}
-
 .share-btn.copy {
     background: #eee;
     color: #333;
 }
 
 .share-btn:hover {
-    opacity: 0.8;
+    transform: scale(1.1);
 }
 
 .copy-status {
@@ -509,7 +508,8 @@ footer {
     color: green;
     font-size: 1rem;
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.2s;
+    font-weight: 500;
 }
 
 .copy-status.show {
@@ -531,20 +531,13 @@ footer {
     padding: 100px 20px;
 }
 
-.notfound h1 {
-    font-size: 8rem;
-    margin: 0;
-    font-weight: 900;
-    color: #ffc000;
-}
-
 .notfound h2 {
-    font-size: 2rem;
-    margin: 10px 0 20px;
+    font-size: 4rem;
+    margin: 20px;
 }
 
 .notfound p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #555;
     max-width: 600px;
     margin: auto;
@@ -560,51 +553,19 @@ footer {
 }
 
 .btn-home {
-    padding: 10px 25px;
+    padding: 10px 20px;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
     color: #000;
-    background: linear-gradient(to bottom, #ffc000, #ffdd75);
-    border: 3px solid #ffc000;
-    font-size: 1.2rem;
+    background: #f5f5f5;
+    border: none;
+    font-size: 1.5rem;
 }
 
-.btn-secondary {
-    padding: 10px 25px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    color: #000;
-    background: linear-gradient(to bottom, #ccc, #eee);
-    border: 3px solid #ccc;
-    font-size: 1.2rem;
-}
-
-.btn-home:hover,
-.btn-secondary:hover {
+.btn-home:hover {
     transform: scale(1.1);
-}
-
-.fab {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    animation: wiggle 2s infinite;
-}
-
-@keyframes wiggle {
-    0%  { transform: rotate(5deg); }
-    50%  { transform: rotate(-5deg); }
-    100% { transform: rotate(5deg); }
-}
-
-.fab img {
-    height: 100px;
+    background: #ffc000;
 }
 
 .table-container {
@@ -617,38 +578,24 @@ footer {
 }
 
 .gov-table th {
-    background-color: #000;
+    background-color: #333;
     color: #ffffff;
-    padding: 12px;
+    padding: 10px 20px;
     text-align: left;
     border: 1px solid #ccc;
 }
 
 .gov-table td {
-    padding: 10px;
+    padding: 10px 20px;
     border: 1px solid #ccc;
+    font-weight: 500;
 }
 
 .gov-table tbody tr:nth-child(even) {
     background-color: #f5f5f5;
 }
 
-.gov-table tbody tr:hover {
-    background-color: #ffefbe;
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
     header {
         padding: 10px 20px;
     }
@@ -710,7 +657,7 @@ footer {
         font-size: 1.5rem;
     }
 
-.hero-text {
+    .hero-text {
         left: 20px;
         bottom: 20px;
     }

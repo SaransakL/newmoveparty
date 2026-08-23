@@ -1,8 +1,36 @@
-@import url(https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap);
 @import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css);
 
+@font-face {
+    font-family: 'FC Mininmal';
+    src: url('assets/FC-Minimal/FC\ Minimal\ Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FC Mininmal';
+    src: url('assets/FC-Minimal/FC\ Minimal\ Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'FC Mininmal';
+    src: url('assets/FC-Minimal/FC\ Minimal\ Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FC Mininmal';
+    src: url('assets/FC-Minimal/FC\ Minimal\ Bold\ Italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
 * {
-    font-family: 'Athiti';
+    font-family: 'FC Mininmal', 'Noto Color Emoji';
     transition: 0.2s ease;
 }
 
@@ -11,13 +39,14 @@ body {
     color: #000;
     margin: 0;
     padding: 0;
+    font-size: 1.5rem;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:10px 200px;
+    padding:15px 200px;
     background-color: #333;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 
@@ -36,7 +65,7 @@ nav {
 header nav a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
     opacity: 1;
     cursor: pointer;
@@ -53,8 +82,8 @@ header nav a {
 .offcanvas {
     position: fixed;
     top: 0;
-    right: -350px;
-    width: 300px;
+    right: -110%;
+    width: 100%;
     height: 100%;
     background-color: #333;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
@@ -68,8 +97,8 @@ header nav a {
 .offcanvas a {
     color: #fff;
     text-decoration: none;
-    padding: 15px 40px;
-    font-size: 2rem;
+    padding: 20px 40px;
+    font-size: 4rem;
     font-weight: 500;
 }
 
@@ -176,13 +205,13 @@ header nav a.active {
 }
 
 .logo {
-    height: 3rem;
+    height: 2.5rem;
 }
 
 .heading {
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .board-grid{
@@ -206,13 +235,13 @@ header nav a.active {
 
 .board-card h3{
     color:#000;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin:10px 0 5px 0;
-    line-height:1.2;
+    line-height:1;
 }
 
 .board-card h3 span {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .board-card p{
@@ -308,19 +337,23 @@ footer {
 }
 
 .news-content h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
 .news-content p {
     color: #000;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
 }
 
 .news-content span {
     color: #000;
     font-weight: 500;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+}
+
+.news-content span i {
+    font-size: 1rem;
 }
 
 .news-card:hover {
@@ -355,7 +388,7 @@ footer {
 
 .accordion-header h3 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .accordion-header .icon {
@@ -376,7 +409,7 @@ footer {
     margin: 15px 0;
     line-height: 1.6;
     white-space: pre-line;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -406,24 +439,31 @@ footer {
 .post-hero .overlay {
     position: absolute;
     inset: 0;
-    background: #00000080
+    background: #00000080;
 }
 
 .hero-text {
     position: absolute;
-    bottom: 40px;
-    left: 100px;
-    color: #fff;
+    inset: 0;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    color: #fff;
+    text-align: center;
+    z-index: 2;
 }
 
 .hero-text h1 {
-    font-size: 3rem;
-    margin: 10px 0 0 0;
+    font-size: 4rem;
+    margin: 20px 0;
 }
 
 .hero-text p {
-    font-size: 1rem;
+    margin-bottom: -20px;
+    font-size: 1.5rem;
     opacity: 0.8;
 }
 
@@ -436,13 +476,13 @@ footer {
 .post-box {
     max-width: 800px;
     padding: 20px;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    line-height: 1.4;
+    font-size: 1.5rem;
 }
 
 .post-box h2 {
     margin-top: 30px;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
 }
 
 .post-image {
@@ -452,7 +492,7 @@ footer {
 }
 
 .lead {
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 .quote {
@@ -474,6 +514,7 @@ footer {
 }
 
 .share-title {
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -485,10 +526,10 @@ footer {
 }
 
 .share-btn {
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
     border: none;
 }
@@ -597,7 +638,7 @@ footer {
 
 @media (max-width: 1024px) {
     header {
-        padding: 10px 20px;
+        padding: 20px;
     }
 
     header nav {
@@ -625,7 +666,7 @@ footer {
     }
     
     .heading {
-        font-size: 2rem;
+        font-size: 3rem;
         margin-bottom: 25px;
     }
 
@@ -637,33 +678,27 @@ footer {
 
     .board-card h3{
         color:#000;
-        font-size:1.5rem;
+        font-size:2rem;
         margin:10px 0 5px 0;
-        line-height:1.2;
     }
 
     .board-card h3 span {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     .board-card p{
-        font-size:1rem;
+        font-size:1.5rem;
         color:#555;
         display:block;
         margin:0;
     }
 
     .accordion-header h3 {
-        font-size: 1.5rem;
-    }
-
-    .hero-text {
-        left: 20px;
-        bottom: 20px;
+        font-size: 2rem;
     }
 
     .hero-text h1 {
-        font-size: 1.8rem;
+        font-size: 3rem;
     }
 
     .post-box {

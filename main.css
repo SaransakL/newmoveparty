@@ -200,6 +200,10 @@ section {
     background: #fff;
 }
 
+header nav a:hover {
+    color: #999;
+}
+
 header nav a.active {
     color: #ffc000;
 }

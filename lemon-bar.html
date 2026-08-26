@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="LEMON BAR™ by พรรคก้าวใหม่">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://newmoveparty.vercel.app/">
+    <meta property="og:image" content="https://newmoveparty.vercel.app/assets/lemon-bar.png">
+    <meta property="og:site_name" content="พรรคก้าวใหม่ - New Move Party">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LEMON BAR™ by พรรคก้าวใหม่">
+    <meta name="twitter:image" content="https://newmoveparty.vercel.app/assets/lemon-bar.png">
+
+
+    <title>LEMON BAR™ by พรรคก้าวใหม่</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green: #5b8075;
+    --green-dark: #3d5d54;
+    --green-light: #dfe9e5;
+
+    --cream: #f4f2eb;
+    --white: #ffffff;
+    --black: #171c1a;
+    --gray: #6c7470;
+
+    --border: #d8ddd9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "IBM Plex Sans Thai", sans-serif;
+    background: var(--cream);
+    color: var(--black);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    height: 76px;
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(244, 242, 235, .92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--green);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.nav-button {
+    background: var(--green);
+    color: white;
+
+    padding: 10px 20px;
+    border-radius: 100px;
+}
+
+.nav-button:hover {
+    color: white;
+    background: var(--green-dark);
+}
+
+.menu-button {
+    display: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 76px);
+
+    padding: 100px 8%;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--green-light),
+            var(--cream)
+        );
+
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "ROST";
+
+    position: absolute;
+    right: -50px;
+    bottom: -100px;
+
+    font-size: 28vw;
+    font-weight: 700;
+
+    color: rgba(91, 128, 117, .08);
+
+    line-height: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--green-dark);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: .95;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero-description {
+    max-width: 520px;
+
+    margin-top: 35px;
+
+    color: var(--gray);
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.button {
+    display: inline-flex;
+
+    padding: 13px 25px;
+
+    border-radius: 100px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+.button.primary {
+    background: var(--green);
+    color: white;
+}
+
+.button.primary:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+.button.secondary {
+    border: 1px solid var(--green);
+    color: var(--green-dark);
+}
+
+.button.secondary:hover {
+    background: var(--green);
+    color: white;
+}
+
+.hero-number {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+
+    color: var(--green);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    max-width: 900px;
+
+    padding: 150px 30px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.intro h2,
+.menu-section h2,
+.about h2,
+.contact h2 {
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.intro h2 span,
+.about h2 span {
+    color: var(--green);
+}
+
+.intro > p:last-child {
+    max-width: 600px;
+
+    margin: 30px auto 0;
+
+    color: var(--gray);
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SPACES
+========================= */
+
+.spaces {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 30px 150px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    letter-spacing: -1px;
+}
+
+.section-heading > span {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+
+/* =========================
+   SPACE CARD
+========================= */
+
+.space-card {
+    min-height: 600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: var(--white);
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+}
+
+.space-image {
+    overflow: hidden;
+}
+
+.space-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 500px;
+
+    object-fit: cover;
+
+    transition: transform .6s ease;
+}
+
+.space-card:hover .space-image img {
+    transform: scale(1.04);
+}
+
+.space-info {
+    padding: 70px;
+
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.space-number {
+    color: var(--green);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.space-type {
+    color: var(--green-dark);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.space-info h3 {
+    font-size: clamp(38px, 4vw, 62px);
+
+    line-height: 1;
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.space-info p:not(.space-type) {
+    max-width: 380px;
+
+    color: var(--gray);
+
+    line-height: 1.8;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: var(--green-dark);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   WORK
+========================= */
+
+.work {
+    background: var(--green);
+    color: white;
+}
+
+.work .space-type,
+.work .space-number {
+    color: var(--green-light);
+}
+
+.work .space-info p:not(.space-type) {
+    color: rgba(255,255,255,.75);
+}
+
+.work .text-link {
+    color: white;
+}
+
+
+/* =========================
+   GAMING
+========================= */
+
+.gaming {
+    background: #202725;
+    color: white;
+}
+
+.gaming .space-type,
+.gaming .space-number {
+    color: #9bb8ae;
+}
+
+.gaming .space-info p:not(.space-type) {
+    color: #aeb8b4;
+}
+
+.gaming .text-link {
+    color: white;
+}
+
+
+/* =========================
+   QUIET
+========================= */
+
+.quiet {
+    background: #e7e3d8;
+}
+
+
+/* =========================
+   SECRET BAR
+========================= */
+
+.secret {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #30443e,
+            #111715 70%
+        );
+
+    color: white;
+
+    border-color: #26312e;
+}
+
+.secret-content {
+    max-width: 650px;
+}
+
+.secret .space-number {
+    display: block;
+    color: #7fa89c;
+
+    margin-bottom: 30px;
+}
+
+.secret .space-type {
+    color: #7fa89c;
+}
+
+.secret h3 {
+    font-size: clamp(45px, 6vw, 85px);
+
+    line-height: .95;
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+.secret p:not(.space-type) {
+    color: #9ca7a3;
+
+    margin-bottom: 35px;
+}
+
+.secret-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border: 1px solid #5b8075;
+    border-radius: 100px;
+
+    color: #a7c1b9;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: .25s;
+}
+
+.secret-button:hover {
+    background: var(--green);
+    color: white;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-section {
+    padding: 130px 8%;
+
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    background: var(--green-light);
+}
+
+.menu-section .button {
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 150px 8%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about-text {
+    max-width: 500px;
+
+    color: var(--gray);
+
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.about-text p + p {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    padding: 150px 30px;
+
+    text-align: center;
+
+    background: var(--white);
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact > p:not(.eyebrow) {
+    color: var(--gray);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 60px 8%;
+
+    background: #18211f;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+footer p {
+    color: #9ba5a1;
+}
+
+footer small {
+    color: #69736f;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+
+        border: 0;
+        background: none;
+
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .hero {
+        min-height: 700px;
+
+        padding: 80px 25px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
+
+    .hero-number {
+        display: none;
+    }
+
+    .intro {
+        padding: 100px 25px;
+    }
+
+    .spaces {
+        padding: 0 15px 100px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .section-heading > span {
+        display: none;
+    }
+
+    .space-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .space-card:nth-child(even) .space-image {
+        order: -1;
+    }
+
+    .space-image img {
+        min-height: 350px;
+        height: 350px;
+    }
+
+    .space-info {
+        padding: 45px 30px;
+    }
+
+    .space-info h3 {
+        font-size: 45px;
+    }
+
+    .menu-section {
+        padding: 90px 25px;
+
+        display: block;
+    }
+
+    .menu-section .button {
+        margin-top: 35px;
+    }
+
+    .about {
+        padding: 100px 25px;
+
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    footer {
+        padding: 45px 25px;
+
+        display: block;
+    }
+
+    footer p {
+        margin: 15px 0;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        justify-content: center;
+    }
+
+    .space-info {
+        gap: 15px;
+    }
+
+    .space-info h3 {
+        font-size: 38px;
+    }
+
+    .secret {
+        min-height: 550px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<main>
+
+    <img src="assets/lemon-bar.png" width="100%">
+
+
+    <!-- INTRO -->
+    <section class="intro">
+
+        <p class="eyebrow">A PLACE FOR EVERY DAY</p>
+
+        <h2>
+            Come for coffee.<br>
+            <span>Stay for everything.</span>
+        </h2>
+
+    </section>
+
+
+    <!-- SPACES -->
+    <section class="spaces" id="spaces">
+
+
+        <!-- COFFEE -->
+        <article class="space-card coffee">
+
+            <div class="space-image">
+                <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5KwHqsDp18WFxwRRXEU3GGQYvAlIy8x8ByOHDqw2RWaK5sMZFle.jpg" alt="Coffee Bar">
+            </div>
+
+            <div class="space-info">
+
+                <div>
+                    <p class="space-type">COFFEE SHOP</p>
+
+                    <h3>กาแฟดี ๆ<br>เริ่มต้นวันที่ดี</h3>
+
+                    <p>
+                        กาแฟคั่วสด เครื่องดื่ม และขนม
+                        สำหรับเช้าวันธรรมดาหรือบ่ายวันหยุด
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- WORK -->
+        <article class="space-card work">
+
+            <div class="space-info">
+
+
+                <div>
+                    <p class="space-type">WORKING SPACE</p>
+
+                    <h3>Work<br>without limits.</h3>
+
+                    <p>
+                        พื้นที่ทำงานพร้อม Wi-Fi
+                        ปลั๊กไฟ และโต๊ะที่ออกแบบมาให้ทำงานได้จริง
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="space-image">
+                <img src="https://i0.wp.com/dsignsomething.com/wp-content/uploads/2016/02/62.png?fit=1190%2C792&ssl=1" alt="Workspace">
+            </div>
+
+        </article>
+
+
+        <!-- GAMING -->
+        <article class="space-card gaming">
+
+            <div class="space-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSunyOV7--rRTufZIoe9BL0s2iS-uD21QLyp0oqha7QCK_LeIWpZ6ftnOI&s=10" alt="Gaming Center">
+            </div>
+
+            <div class="space-info">
+
+
+                <div>
+                    <p class="space-type">GAMING CENTER</p>
+
+                    <h3>Play hard.<br>Stay longer.</h3>
+
+                    <p>
+                        Gaming PC และพื้นที่สำหรับเล่นเกมกับเพื่อน
+                        จะมาเล่นจริงจังหรือมาเล่นขำ ๆ ก็ได้
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- QUIET -->
+        <article class="space-card quiet">
+
+            <div class="space-info">
+
+
+                <div>
+                    <p class="space-type">SILENT ZONE</p>
+
+                    <h3>Slow down.<br>Read more.</h3>
+
+                    <p>
+                        ห้องเงียบสำหรับอ่านหนังสือ
+                        ทำงาน หรือใช้เวลาอยู่กับตัวเอง
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="space-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOpxbwRclZPNdbnyTByCQUYuTWte9Ma9lg-X_-TPPS9WKwsn_px5pZpQKL&s=10" alt="Quiet Room">
+            </div>
+
+        </article>
+
+
+        <!-- SECRET BAR -->
+        <article class="space-card secret">
+
+            <div class="secret-content">
+
+
+                <p class="space-type">CLASSIFIED · AFTER DARK</p>
+
+                <h3>
+                    You weren't<br>
+                    supposed to find this.
+                </h3>
+
+                <p>โรงเบียร์ยามราตรี สำหรับการพักผ่อนจากการทำงานที่เหนื่อย</p>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+
+        <div>
+
+            <h2>
+                Coffee in the morning.<br>
+                Drinks at night.
+            </h2>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2>
+            More than<br>
+            <span>a coffee shop.</span>
+        </h2>
+
+        <div class="about-text">
+            <p>
+                LEMON BAR เกิดจากความคิดง่ายๆ ว่า
+                ร้านหนึ่งร้านไม่จำเป็นต้องมีเพียงบรรยากาศเดียว
+            </p>
+
+            <p>
+                ที่นี่คุณสามารถเริ่มต้นวันด้วยกาแฟ
+                นั่งทำงานในช่วงบ่าย เล่นเกมกับเพื่อน
+                อ่านหนังสือในห้องเงียบ
+                และจบวันด้วยเครื่องดื่มดีๆ
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <p class="eyebrow">COME FIND US</p>
+
+        <h2>See you at LEMON BAR</h2>
+
+        <a href="https://discord.gg/6SDGmkXd9h" target="_blank" class="button primary">
+            พาฉันไปหน่อย
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <small>
+        © 2026 LEMON BAR™ by พรรคก้าวใหม่
+    </small>
+
+</footer>
+
+</body>
+</html>

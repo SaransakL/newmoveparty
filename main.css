@@ -231,7 +231,7 @@ header nav a.active {
 
 .board-card img{
     width:100%;
-    background: #ffc000;
+    background: linear-gradient(#ffc000, #ffdd75);
     border-radius: 12px;
     aspect-ratio: 1/1;
     object-fit: cover;

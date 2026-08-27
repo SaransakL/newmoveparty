@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // สร้างจุด
   slide.forEach((_, i) => {
-      const dot = document.createElement('button');
+      const dot = document.createElement('div');
 
       dot.classList.add('dot');
       dot.setAttribute('aria-label', `Slide ${i + 1}`);

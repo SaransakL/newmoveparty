@@ -1,3 +1,5 @@
+window.location.href = "/maintenance.html";
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // ================= SLIDER =================

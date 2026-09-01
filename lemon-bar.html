@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>LEMON BAR™ by พรรคก้าวใหม่</title>
+
     <meta property="og:title" content="LEMON BAR™ by พรรคก้าวใหม่">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://newmoveparty.vercel.app/">
@@ -14,988 +16,1225 @@
     <meta name="twitter:title" content="LEMON BAR™ by พรรคก้าวใหม่">
     <meta name="twitter:image" content="https://newmoveparty.vercel.app/assets/lemon-bar.png">
 
-
-    <title>LEMON BAR™ by พรรคก้าวใหม่</title>
-
-    <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-    --green: #5b8075;
-    --green-dark: #3d5d54;
-    --green-light: #dfe9e5;
-
-    --cream: #f4f2eb;
-    --white: #ffffff;
-    --black: #171c1a;
-    --gray: #6c7470;
-
-    --border: #d8ddd9;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "IBM Plex Sans Thai", sans-serif;
-    background: var(--cream);
-    color: var(--black);
-}
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --yellow: #d8c56a;
+            --yellow-light: #eee6b4;
+            --yellow-dark: #a99a43;
+
+            --black: #0d0f0e;
+            --dark: #151917;
+            --dark-2: #1c211f;
 
-
-/* =========================
-   HEADER
-========================= */
+            --cream: #f1eee3;
+            --white: #ffffff;
+
+            --gray: #929894;
+            --gray-light: #c3c7c3;
+
+            --border: #303632;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "IBM Plex Sans Thai", sans-serif;
+            background: var(--black);
+            color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 76px;
+
+            padding: 0 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+            z-index: 1000;
+
+            background: rgba(13, 15, 14, .88);
+            backdrop-filter: blur(18px);
 
-    height: 76px;
-    padding: 0 6%;
+            border-bottom: 1px solid var(--border);
+        }
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+        }
 
-    background: rgba(244, 242, 235, .92);
-    backdrop-filter: blur(15px);
+        .logo span {
+            color: var(--yellow);
+        }
 
-    border-bottom: 1px solid var(--border);
-}
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
 
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -1px;
-}
+        nav a {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-light);
+            transition: .25s ease;
+        }
 
-.logo span,
-.footer-logo span {
-    color: var(--green);
-}
+        nav a:hover {
+            color: var(--yellow);
+        }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
 
-nav a {
-    font-size: 14px;
-    font-weight: 500;
-}
+        /* =========================
+           HERO
+        ========================= */
 
-nav a:hover {
-    color: var(--green);
-}
+        .hero {
+            min-height: 100vh;
+            padding: 150px 8% 100px;
 
-.nav-button {
-    background: var(--green);
-    color: white;
+            position: relative;
 
-    padding: 10px 20px;
-    border-radius: 100px;
-}
+            display: flex;
+            align-items: center;
 
-.nav-button:hover {
-    color: white;
-    background: var(--green-dark);
-}
+            overflow: hidden;
 
-.menu-button {
-    display: none;
-}
+            background:
+                radial-gradient(
+                    circle at 75% 45%,
+                    rgba(216, 197, 106, .14),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 100% 100%,
+                    rgba(216, 197, 106, .08),
+                    transparent 35%
+                ),
+                var(--black);
+        }
 
+        .hero::before {
+            content: "BAR";
 
-/* =========================
-   HERO
-========================= */
+            position: absolute;
+            right: -3vw;
+            bottom: -5vw;
 
-.hero {
-    min-height: calc(100vh - 76px);
+            font-size: 30vw;
+            font-weight: 700;
 
-    padding: 100px 8%;
+            line-height: .75;
 
-    display: flex;
-    align-items: center;
+            color: rgba(216, 197, 106, .035);
 
-    position: relative;
+            pointer-events: none;
+        }
 
-    background:
-        linear-gradient(
-            120deg,
-            var(--green-light),
-            var(--cream)
-        );
+        .hero-content {
+            max-width: 950px;
+            position: relative;
+            z-index: 2;
+        }
 
-    overflow: hidden;
-}
+        .eyebrow {
+            color: var(--yellow);
 
-.hero::after {
-    content: "ROST";
+            font-size: 11px;
+            font-weight: 700;
 
-    position: absolute;
-    right: -50px;
-    bottom: -100px;
+            letter-spacing: 4px;
 
-    font-size: 28vw;
-    font-weight: 700;
+            margin-bottom: 22px;
+        }
 
-    color: rgba(91, 128, 117, .08);
+        .hero h1 {
+            font-size: clamp(75px, 13vw, 180px);
 
-    line-height: 1;
-}
+            line-height: .8;
 
-.hero-content {
-    max-width: 800px;
-    position: relative;
-    z-index: 2;
-}
+            letter-spacing: -9px;
+        }
 
-.eyebrow {
-    color: var(--green-dark);
+        .hero h1 span {
+            color: var(--yellow);
+        }
 
-    font-size: 12px;
-    font-weight: 700;
+        .hero-description {
+            max-width: 570px;
 
-    letter-spacing: 2px;
-    text-transform: uppercase;
+            margin-top: 42px;
 
-    margin-bottom: 20px;
-}
+            color: var(--gray);
 
-.hero h1 {
-    font-size: clamp(60px, 9vw, 130px);
-    line-height: .95;
-    letter-spacing: -5px;
-}
+            font-size: 17px;
+            line-height: 1.9;
+        }
 
-.hero h1 span {
-    color: var(--green);
-}
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
 
-.hero-description {
-    max-width: 520px;
+            margin-top: 35px;
+        }
 
-    margin-top: 35px;
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-    color: var(--gray);
+            padding: 13px 25px;
 
-    font-size: 17px;
-    line-height: 1.8;
-}
+            border-radius: 100px;
 
-.hero-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 35px;
-}
+            font-size: 13px;
+            font-weight: 600;
 
-.button {
-    display: inline-flex;
+            transition: .25s ease;
+        }
 
-    padding: 13px 25px;
+        .button.primary {
+            background: var(--yellow);
+            color: var(--black);
+        }
 
-    border-radius: 100px;
+        .button.primary:hover {
+            background: var(--yellow-light);
+            transform: translateY(-3px);
+        }
 
-    font-size: 14px;
-    font-weight: 600;
+        .button.secondary {
+            border: 1px solid #555b57;
+            color: var(--gray-light);
+        }
 
-    transition: .25s;
-}
+        .button.secondary:hover {
+            border-color: var(--yellow);
+            color: var(--yellow);
+        }
 
-.button.primary {
-    background: var(--green);
-    color: white;
-}
+        .hero-number {
+            position: absolute;
 
-.button.primary:hover {
-    background: var(--green-dark);
-    transform: translateY(-2px);
-}
+            right: 8%;
+            top: 50%;
 
-.button.secondary {
-    border: 1px solid var(--green);
-    color: var(--green-dark);
-}
+            color: var(--yellow);
 
-.button.secondary:hover {
-    background: var(--green);
-    color: white;
-}
+            font-size: 11px;
+            font-weight: 700;
 
-.hero-number {
-    position: absolute;
-    right: 8%;
-    top: 50%;
+            writing-mode: vertical-rl;
 
-    color: var(--green);
+            letter-spacing: 3px;
+        }
 
-    font-size: 14px;
-    font-weight: 700;
-}
 
+        /* =========================
+           BAR INTRO
+        ========================= */
 
-/* =========================
-   INTRO
-========================= */
+        .bar-intro {
+            padding: 150px 30px;
 
-.intro {
-    max-width: 900px;
+            text-align: center;
 
-    padding: 150px 30px;
+            background: var(--cream);
+            color: var(--black);
+        }
 
-    margin: auto;
+        .bar-intro-inner {
+            max-width: 950px;
+            margin: auto;
+        }
 
-    text-align: center;
-}
+        .bar-intro .eyebrow {
+            color: var(--yellow-dark);
+        }
 
-.intro h2,
-.menu-section h2,
-.about h2,
-.contact h2 {
-    font-size: clamp(40px, 6vw, 75px);
-    line-height: 1.05;
-    letter-spacing: -3px;
-}
+        .bar-intro h2 {
+            font-size: clamp(42px, 7vw, 85px);
 
-.intro h2 span,
-.about h2 span {
-    color: var(--green);
-}
+            line-height: .95;
 
-.intro > p:last-child {
-    max-width: 600px;
+            letter-spacing: -5px;
+        }
 
-    margin: 30px auto 0;
+        .bar-intro h2 span {
+            color: var(--yellow-dark);
+        }
 
-    color: var(--gray);
+        .bar-intro p {
+            max-width: 650px;
 
-    line-height: 1.8;
-}
+            margin: 35px auto 0;
 
+            color: #666d68;
 
-/* =========================
-   SPACES
-========================= */
+            line-height: 1.9;
+        }
 
-.spaces {
-    max-width: 1250px;
-    margin: auto;
-    padding: 0 30px 150px;
-}
 
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+        /* =========================
+           MENU
+        ========================= */
 
-    margin-bottom: 50px;
-}
+        .drinks {
+            padding: 150px 8%;
 
-.section-heading h2 {
-    font-size: 38px;
-    letter-spacing: -1px;
-}
+            background: var(--dark);
+        }
 
-.section-heading > span {
-    color: var(--gray);
-    font-size: 13px;
-}
+        .drinks-inner {
+            max-width: 1250px;
+            margin: auto;
+        }
 
+        .drinks-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
 
-/* =========================
-   SPACE CARD
-========================= */
+            margin-bottom: 90px;
+        }
 
-.space-card {
-    min-height: 600px;
+        .drinks-heading h2 {
+            font-size: clamp(50px, 7vw, 90px);
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+            line-height: .85;
 
-    background: var(--white);
+            letter-spacing: -6px;
+        }
 
-    margin-bottom: 25px;
+        .drinks-heading h2 span {
+            color: var(--yellow);
+        }
 
-    overflow: hidden;
+        .drinks-heading p {
+            max-width: 320px;
 
-    border: 1px solid var(--border);
-}
+            color: var(--gray);
 
-.space-image {
-    overflow: hidden;
-}
+            line-height: 1.8;
+        }
 
-.space-image img {
-    width: 100%;
-    height: 100%;
 
-    min-height: 500px;
+        /* =========================
+           MENU CATEGORY
+        ========================= */
 
-    object-fit: cover;
+        .menu-category {
+            margin-top: 110px;
+        }
 
-    transition: transform .6s ease;
-}
+        .menu-category:first-of-type {
+            margin-top: 0;
+        }
 
-.space-card:hover .space-image img {
-    transform: scale(1.04);
-}
+        .menu-category-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
 
-.space-info {
-    padding: 70px;
+            margin-bottom: 35px;
 
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-}
+            padding-bottom: 18px;
 
-.space-number {
-    color: var(--green);
+            border-bottom: 1px solid var(--border);
+        }
 
-    font-size: 13px;
-    font-weight: 700;
-}
+        .menu-category-heading .eyebrow {
+            margin-bottom: 8px;
+        }
 
-.space-type {
-    color: var(--green-dark);
+        .menu-category-heading h3 {
+            font-size: clamp(30px, 4vw, 48px);
 
-    font-size: 12px;
-    font-weight: 700;
+            line-height: 1;
 
-    letter-spacing: 2px;
+            letter-spacing: -2px;
+        }
 
-    margin-bottom: 25px;
-}
+        .menu-category-heading span {
+            color: var(--gray);
 
-.space-info h3 {
-    font-size: clamp(38px, 4vw, 62px);
+            font-size: 12px;
+        }
 
-    line-height: 1;
-    letter-spacing: -2px;
 
-    margin-bottom: 25px;
-}
+        /* =========================
+           DRINK GRID
+        ========================= */
 
-.space-info p:not(.space-type) {
-    max-width: 380px;
+        .drink-grid {
+            display: grid;
 
-    color: var(--gray);
+            grid-template-columns: repeat(3, 1fr);
 
-    line-height: 1.8;
-}
+            gap: 12px;
+        }
 
-.text-link {
-    display: inline-block;
+        .drink-card {
+            min-height: 245px;
 
-    margin-top: 30px;
+            padding: 30px;
 
-    color: var(--green-dark);
+            display: flex;
+            flex-direction: column;
 
-    font-size: 14px;
-    font-weight: 700;
-}
+            background: var(--dark-2);
 
-.text-link:hover {
-    text-decoration: underline;
-}
+            border: 1px solid var(--border);
 
+            transition: .3s ease;
+        }
 
-/* =========================
-   WORK
-========================= */
+        .drink-card:hover {
+            transform: translateY(-5px);
 
-.work {
-    background: var(--green);
-    color: white;
-}
+            border-color: var(--yellow);
 
-.work .space-type,
-.work .space-number {
-    color: var(--green-light);
-}
+            background: #202521;
+        }
 
-.work .space-info p:not(.space-type) {
-    color: rgba(255,255,255,.75);
-}
+        .drink-number {
+            color: var(--yellow);
 
-.work .text-link {
-    color: white;
-}
+            font-size: 11px;
+            font-weight: 700;
 
+            letter-spacing: 2px;
 
-/* =========================
-   GAMING
-========================= */
+            margin-bottom: 45px;
+        }
 
-.gaming {
-    background: #202725;
-    color: white;
-}
+        .drink-card h3 {
+            font-size: 23px;
 
-.gaming .space-type,
-.gaming .space-number {
-    color: #9bb8ae;
-}
+            line-height: 1.1;
 
-.gaming .space-info p:not(.space-type) {
-    color: #aeb8b4;
-}
+            letter-spacing: -1px;
 
-.gaming .text-link {
-    color: white;
-}
+            margin-bottom: 12px;
+        }
 
+        .drink-card p {
+            color: var(--gray);
 
-/* =========================
-   QUIET
-========================= */
+            font-size: 13px;
 
-.quiet {
-    background: #e7e3d8;
-}
+            line-height: 1.7;
 
+            margin-bottom: 25px;
+        }
 
-/* =========================
-   SECRET BAR
-========================= */
+        .drink-price {
+            margin-top: auto;
 
-.secret {
-    min-height: 650px;
+            color: var(--yellow);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            font-size: 14px;
 
-    text-align: center;
+            font-weight: 700;
+        }
 
-    background:
-        radial-gradient(
-            circle at center,
-            #30443e,
-            #111715 70%
-        );
 
-    color: white;
+        /* =========================
+           ABOUT
+        ========================= */
 
-    border-color: #26312e;
-}
+        .about {
+            padding: 160px 8%;
 
-.secret-content {
-    max-width: 650px;
-}
+            display: grid;
 
-.secret .space-number {
-    display: block;
-    color: #7fa89c;
+            grid-template-columns: 1fr 1fr;
 
-    margin-bottom: 30px;
-}
+            gap: 100px;
 
-.secret .space-type {
-    color: #7fa89c;
-}
+            background: var(--cream);
 
-.secret h3 {
-    font-size: clamp(45px, 6vw, 85px);
+            color: var(--black);
+        }
 
-    line-height: .95;
-    letter-spacing: -3px;
+        .about h2 {
+            font-size: clamp(50px, 7vw, 90px);
 
-    margin-bottom: 30px;
-}
+            line-height: .85;
 
-.secret p:not(.space-type) {
-    color: #9ca7a3;
+            letter-spacing: -6px;
+        }
 
-    margin-bottom: 35px;
-}
+        .about h2 span {
+            color: var(--yellow-dark);
+        }
 
-.secret-button {
-    display: inline-block;
+        .about-text {
+            max-width: 520px;
 
-    padding: 13px 25px;
+            color: #686f6a;
 
-    border: 1px solid #5b8075;
-    border-radius: 100px;
+            font-size: 17px;
 
-    color: #a7c1b9;
+            line-height: 2;
+        }
 
-    font-size: 12px;
-    font-weight: 700;
+        .about-text p + p {
+            margin-top: 30px;
+        }
 
-    letter-spacing: 1px;
 
-    transition: .25s;
-}
+        /* =========================
+           CONTACT
+        ========================= */
 
-.secret-button:hover {
-    background: var(--green);
-    color: white;
-}
+        .contact {
+            padding: 160px 30px;
 
+            text-align: center;
 
-/* =========================
-   MENU
-========================= */
+            background:
+                radial-gradient(
+                    circle at center,
+                    #292d29,
+                    var(--black) 65%
+                );
+        }
 
-.menu-section {
-    padding: 130px 8%;
+        .contact h2 {
+            font-size: clamp(55px, 8vw, 105px);
 
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
+            line-height: .9;
 
-    background: var(--green-light);
-}
+            letter-spacing: -6px;
 
-.menu-section .button {
-    flex-shrink: 0;
-}
+            margin-bottom: 30px;
+        }
 
+        .contact h2 span {
+            color: var(--yellow);
+        }
 
-/* =========================
-   ABOUT
-========================= */
+        .contact > p:not(.eyebrow) {
+            color: var(--gray);
 
-.about {
-    padding: 150px 8%;
+            margin-bottom: 35px;
+        }
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-}
 
-.about-text {
-    max-width: 500px;
+        /* =========================
+           FOOTER
+        ========================= */
 
-    color: var(--gray);
+        footer {
+            padding: 55px 8%;
 
-    font-size: 17px;
-    line-height: 1.9;
-}
+            background: #080a09;
 
-.about-text p + p {
-    margin-top: 25px;
-}
+            color: white;
 
+            display: flex;
 
-/* =========================
-   CONTACT
-========================= */
+            justify-content: space-between;
 
-.contact {
-    padding: 150px 30px;
+            align-items: center;
 
-    text-align: center;
+            border-top: 1px solid var(--border);
+        }
 
-    background: var(--white);
-}
+        footer small {
+            color: #626863;
+        }
 
-.contact h2 {
-    margin-bottom: 20px;
-}
+        .footer-logo {
+            font-size: 28px;
 
-.contact > p:not(.eyebrow) {
-    color: var(--gray);
+            font-weight: 700;
+        }
 
-    margin-bottom: 35px;
-}
+        .footer-logo span {
+            color: var(--yellow);
+        }
 
 
-/* =========================
-   FOOTER
-========================= */
+        /* =========================
+           MOBILE
+        ========================= */
 
-footer {
-    padding: 60px 8%;
+        @media (max-width: 800px) {
 
-    background: #18211f;
-    color: white;
+            header {
+                padding: 0 20px;
+            }
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+            nav {
+                display: none;
+            }
 
-.footer-logo {
-    font-size: 30px;
-    font-weight: 700;
-}
+            .hero {
+                padding: 130px 25px 80px;
+            }
 
-footer p {
-    color: #9ba5a1;
-}
+            .hero h1 {
+                font-size: 72px;
+                letter-spacing: -5px;
+            }
 
-footer small {
-    color: #69736f;
-}
+            .hero-description {
+                font-size: 15px;
+            }
 
+            .hero-number {
+                display: none;
+            }
 
-/* =========================
-   RESPONSIVE
-========================= */
+            .hero-buttons {
+                flex-direction: column;
+            }
 
-@media (max-width: 800px) {
+            .button {
+                width: 100%;
+            }
 
-    header {
-        padding: 0 20px;
-    }
+            .bar-intro {
+                padding: 100px 25px;
+            }
 
-    nav {
-        display: none;
-    }
+            .bar-intro h2 {
+                letter-spacing: -3px;
+            }
 
-    .menu-button {
-        display: block;
+            .drinks {
+                padding: 100px 20px;
+            }
 
-        border: 0;
-        background: none;
+            .drinks-heading {
+                display: block;
+            }
 
-        font-size: 25px;
-        cursor: pointer;
-    }
+            .drinks-heading p {
+                margin-top: 30px;
+            }
 
-    .hero {
-        min-height: 700px;
+            .menu-category {
+                margin-top: 80px;
+            }
 
-        padding: 80px 25px;
-    }
+            .menu-category-heading {
+                display: block;
+            }
 
-    .hero h1 {
-        font-size: 65px;
-        letter-spacing: -3px;
-    }
+            .menu-category-heading span {
+                display: block;
+                margin-top: 10px;
+            }
 
-    .hero-number {
-        display: none;
-    }
+            .drink-grid {
+                grid-template-columns: 1fr;
+            }
 
-    .intro {
-        padding: 100px 25px;
-    }
+            .drink-card {
+                min-height: 210px;
+            }
 
-    .spaces {
-        padding: 0 15px 100px;
-    }
+            .about {
+                padding: 100px 25px;
 
-    .section-heading {
-        display: block;
-    }
+                grid-template-columns: 1fr;
 
-    .section-heading h2 {
-        font-size: 30px;
-    }
+                gap: 60px;
+            }
 
-    .section-heading > span {
-        display: none;
-    }
+            .contact {
+                padding: 110px 25px;
+            }
 
-    .space-card {
-        grid-template-columns: 1fr;
-        min-height: auto;
-    }
+            footer {
+                padding: 45px 25px;
 
-    .space-card:nth-child(even) .space-image {
-        order: -1;
-    }
+                display: block;
+            }
 
-    .space-image img {
-        min-height: 350px;
-        height: 350px;
-    }
+            footer small {
+                display: block;
 
-    .space-info {
-        padding: 45px 30px;
-    }
+                margin-top: 15px;
+            }
+        }
 
-    .space-info h3 {
-        font-size: 45px;
-    }
+        @media (max-width: 500px) {
 
-    .menu-section {
-        padding: 90px 25px;
+            .hero h1 {
+                font-size: 58px;
+            }
 
-        display: block;
-    }
+            .drinks-heading h2 {
+                font-size: 55px;
+            }
 
-    .menu-section .button {
-        margin-top: 35px;
-    }
+            .menu-category-heading h3 {
+                font-size: 34px;
+            }
 
-    .about {
-        padding: 100px 25px;
-
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    footer {
-        padding: 45px 25px;
-
-        display: block;
-    }
-
-    footer p {
-        margin: 15px 0;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .hero h1 {
-        font-size: 52px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .button {
-        justify-content: center;
-    }
-
-    .space-info {
-        gap: 15px;
-    }
-
-    .space-info h3 {
-        font-size: 38px;
-    }
-
-    .secret {
-        min-height: 550px;
-    }
-}
-
-</style>
+            .contact h2 {
+                font-size: 60px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+<header>
+
+    <a href="#" class="logo">
+        LEMON<span>BAR™</span>
+    </a>
+
+    <nav>
+        <a href="#menu">MENU</a>
+        <a href="#signature">COCKTAILS</a>
+        <a href="#beer">BEER</a>
+        <a href="#spirits">SPIRITS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+</header>
+
 
 <main>
 
-    <img src="assets/lemon-bar.png" width="100%">
+    <!-- HERO -->
 
+    <section class="hero">
 
-    <!-- INTRO -->
-    <section class="intro">
+        <div class="hero-content">
 
-        <p class="eyebrow">A PLACE FOR EVERY DAY</p>
+            <p class="eyebrow">
+                COCKTAILS · BEER · SPIRITS · NIGHT
+            </p>
 
-        <h2>
-            Come for coffee.<br>
-            <span>Stay for everything.</span>
-        </h2>
+            <h1>
+                LEMON<br>
+                <span>BAR.</span>
+            </h1>
+
+            <p class="hero-description">
+                บาร์เล็ก ๆ สำหรับคนที่ชอบเครื่องดื่มดี ๆ
+                เพลงดี ๆ และค่ำคืนที่ไม่ต้องรีบกลับ
+                ค็อกเทลถูกทำอย่างตั้งใจ เสิร์ฟพร้อมเสียงเพลง
+                และบรรยากาศหลังพระอาทิตย์ตก
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="button primary">
+                    ดูเมนู
+                </a>
+
+                <a href="#about" class="button secondary">
+                    เกี่ยวกับบาร์
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-number">
+            EST. 2026 · AFTER DARK
+        </div>
 
     </section>
 
 
-    <!-- SPACES -->
-    <section class="spaces" id="spaces">
+    <!-- INTRO -->
 
+    <section class="bar-intro">
 
-        <!-- COFFEE -->
-        <article class="space-card coffee">
+        <div class="bar-intro-inner">
 
-            <div class="space-image">
-                <img src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5KwHqsDp18WFxwRRXEU3GGQYvAlIy8x8ByOHDqw2RWaK5sMZFle.jpg" alt="Coffee Bar">
-            </div>
+            <p class="eyebrow">
+                WELCOME TO LEMON BAR
+            </p>
 
-            <div class="space-info">
+            <h2>
+                Drinks first.<br>
+                <span>Everything else follows.</span>
+            </h2>
 
-                <div>
-                    <p class="space-type">COFFEE SHOP</p>
+            <p>
+                ที่นี่ไม่มีคาเฟ่ ไม่มีพื้นที่ทำงาน
+                และไม่มีอะไรที่ต้องรีบทำ
+                มีเพียงบาร์ เครื่องดื่ม เพลง
+                และช่วงเวลาที่คุณเลือกจะอยู่ต่ออีกหนึ่งแก้ว
+            </p>
 
-                    <h3>กาแฟดี ๆ<br>เริ่มต้นวันที่ดี</h3>
-
-                    <p>
-                        กาแฟคั่วสด เครื่องดื่ม และขนม
-                        สำหรับเช้าวันธรรมดาหรือบ่ายวันหยุด
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- WORK -->
-        <article class="space-card work">
-
-            <div class="space-info">
-
-
-                <div>
-                    <p class="space-type">WORKING SPACE</p>
-
-                    <h3>Work<br>without limits.</h3>
-
-                    <p>
-                        พื้นที่ทำงานพร้อม Wi-Fi
-                        ปลั๊กไฟ และโต๊ะที่ออกแบบมาให้ทำงานได้จริง
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="space-image">
-                <img src="https://i0.wp.com/dsignsomething.com/wp-content/uploads/2016/02/62.png?fit=1190%2C792&ssl=1" alt="Workspace">
-            </div>
-
-        </article>
-
-
-        <!-- GAMING -->
-        <article class="space-card gaming">
-
-            <div class="space-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSunyOV7--rRTufZIoe9BL0s2iS-uD21QLyp0oqha7QCK_LeIWpZ6ftnOI&s=10" alt="Gaming Center">
-            </div>
-
-            <div class="space-info">
-
-
-                <div>
-                    <p class="space-type">GAMING CENTER</p>
-
-                    <h3>Play hard.<br>Stay longer.</h3>
-
-                    <p>
-                        Gaming PC และพื้นที่สำหรับเล่นเกมกับเพื่อน
-                        จะมาเล่นจริงจังหรือมาเล่นขำ ๆ ก็ได้
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- QUIET -->
-        <article class="space-card quiet">
-
-            <div class="space-info">
-
-
-                <div>
-                    <p class="space-type">SILENT ZONE</p>
-
-                    <h3>Slow down.<br>Read more.</h3>
-
-                    <p>
-                        ห้องเงียบสำหรับอ่านหนังสือ
-                        ทำงาน หรือใช้เวลาอยู่กับตัวเอง
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="space-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOpxbwRclZPNdbnyTByCQUYuTWte9Ma9lg-X_-TPPS9WKwsn_px5pZpQKL&s=10" alt="Quiet Room">
-            </div>
-
-        </article>
-
-
-        <!-- SECRET BAR -->
-        <article class="space-card secret">
-
-            <div class="secret-content">
-
-
-                <p class="space-type">CLASSIFIED · AFTER DARK</p>
-
-                <h3>
-                    You weren't<br>
-                    supposed to find this.
-                </h3>
-
-                <p>โรงเบียร์ยามราตรี สำหรับการพักผ่อนจากการทำงานที่เหนื่อย</p>
-
-            </div>
-
-        </article>
+        </div>
 
     </section>
 
 
     <!-- MENU -->
-    <section class="menu-section" id="menu">
 
-        <div>
+    <section class="drinks" id="menu">
 
-            <h2>
-                Coffee in the morning.<br>
-                Drinks at night.
-            </h2>
+        <div class="drinks-inner">
+
+            <div class="drinks-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        THE BAR MENU
+                    </p>
+
+                    <h2>
+                        Good drinks.<br>
+                        <span>Good nights.</span>
+                    </h2>
+
+                </div>
+
+                <p>
+                    ตั้งแต่ค็อกเทลซิกเนเจอร์
+                    ค็อกเทลคลาสสิก เบียร์
+                    สุรา ไปจนถึงเครื่องดื่มไม่มีแอลกอฮอล์
+                </p>
+
+            </div>
+
+
+            <!-- SIGNATURE -->
+
+            <div class="menu-category" id="signature">
+
+                <div class="menu-category-heading">
+
+                    <div>
+                        <p class="eyebrow">
+                            SIGNATURE COCKTAILS
+                        </p>
+
+                        <h3>
+                            ค็อกเทลซิกเนเจอร์
+                        </h3>
+                    </div>
+
+                </div>
+
+                <div class="drink-grid">
+
+                    <article class="drink-card">
+                        <p class="drink-number">01</p>
+                        <h3>LEMON GARDEN</h3>
+                        <p>วอดก้า, เลมอน, เอลเดอร์ฟลาวเวอร์, โหระพา, โซดา</p>
+                        <div class="drink-price">320 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">02</p>
+                        <h3>GREEN HORIZON</h3>
+                        <p>จิน, ยูซุ, แอปเปิลเขียว, โทนิก</p>
+                        <div class="drink-price">320 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">03</p>
+                        <h3>THAI TIDE</h3>
+                        <p>รัม, ตะไคร้, มะนาว, น้ำผึ้ง</p>
+                        <div class="drink-price">320 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">04</p>
+                        <h3>MOONLIT</h3>
+                        <p>เตกีลา, เสาวรส, ส้ม, เกรนาดีน</p>
+                        <div class="drink-price">340 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">05</p>
+                        <h3>CLOUD NINE</h3>
+                        <p>วิสกี้, พีช, แอปริคอตลิเคียวร์, บิตเทอร์ส</p>
+                        <div class="drink-price">340 บาท</div>
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLASSIC -->
+
+            <div class="menu-category">
+
+                <div class="menu-category-heading">
+
+                    <div>
+                        <p class="eyebrow">
+                            CLASSIC COCKTAILS
+                        </p>
+
+                        <h3>
+                            ค็อกเทลคลาสสิก
+                        </h3>
+                    </div>
+
+                </div>
+
+                <div class="drink-grid">
+
+                    <article class="drink-card">
+                        <p class="drink-number">01</p>
+                        <h3>MARGARITA</h3>
+                        <p>เตกีลา, ทริปเปิลเซก, มะนาว</p>
+                        <div class="drink-price">300 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">02</p>
+                        <h3>MOJITO</h3>
+                        <p>รัม, สะระแหน่, มะนาว, โซดา</p>
+                        <div class="drink-price">300 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">03</p>
+                        <h3>OLD FASHIONED</h3>
+                        <p>เบอร์เบิน, อังกอสตูราบิตเทอร์ส, น้ำตาล</p>
+                        <div class="drink-price">320 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">04</p>
+                        <h3>NEGRONI</h3>
+                        <p>จิน, คัมพารี, สวีตเวอร์มุท</p>
+                        <div class="drink-price">320 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">05</p>
+                        <h3>WHISKEY SOUR</h3>
+                        <p>เบอร์เบิน, เลมอน, ไข่ขาว</p>
+                        <div class="drink-price">320 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">06</p>
+                        <h3>DRY MARTINI</h3>
+                        <p>จิน, ดรายเวอร์มุท, มะกอก</p>
+                        <div class="drink-price">320 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">07</p>
+                        <h3>DAIQUIRI</h3>
+                        <p>รัม, มะนาว, น้ำตาล</p>
+                        <div class="drink-price">300 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">08</p>
+                        <h3>MANHATTAN</h3>
+                        <p>ไรย์วิสกี้, สวีตเวอร์มุท, บิตเทอร์ส</p>
+                        <div class="drink-price">320 บาท</div>
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- BEER -->
+
+            <div class="menu-category" id="beer">
+
+                <div class="menu-category-heading">
+
+                    <div>
+                        <p class="eyebrow">
+                            BEER
+                        </p>
+
+                        <h3>
+                            เบียร์
+                        </h3>
+                    </div>
+
+                </div>
+
+                <div class="drink-grid">
+
+                    <article class="drink-card">
+                        <p class="drink-number">01</p>
+                        <h3>SINGHA</h3>
+                        <p>เบียร์สด</p>
+                        <div class="drink-price">180 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">02</p>
+                        <h3>LEO</h3>
+                        <div class="drink-price">180 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">03</p>
+                        <h3>HEINEKEN</h3>
+                        <div class="drink-price">180 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">04</p>
+                        <h3>ASAHI</h3>
+                        <div class="drink-price">180 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">05</p>
+                        <h3>CORONA</h3>
+                        <div class="drink-price">200 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">06</p>
+                        <h3>CHANG</h3>
+                        <div class="drink-price">160 บาท</div>
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- SPIRITS -->
+
+            <div class="menu-category" id="spirits">
+
+                <div class="menu-category-heading">
+
+                    <div>
+                        <p class="eyebrow">
+                            SPIRITS
+                        </p>
+
+                        <h3>
+                            สุรา
+                        </h3>
+                    </div>
+
+                    <span>
+                        ช็อต / ขวด
+                    </span>
+
+                </div>
+
+                <div class="drink-grid">
+
+                    <article class="drink-card">
+                        <p class="drink-number">01</p>
+                        <h3>VODKA</h3>
+                        <div class="drink-price">180 / 2,000 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">02</p>
+                        <h3>GIN</h3>
+                        <div class="drink-price">180 / 2,000 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">03</p>
+                        <h3>RUM</h3>
+                        <div class="drink-price">180 / 2,000 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">04</p>
+                        <h3>TEQUILA</h3>
+                        <div class="drink-price">200 / 2,500 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">05</p>
+                        <h3>WHISKEY</h3>
+                        <div class="drink-price">200 / 2,500 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">06</p>
+                        <h3>COGNAC</h3>
+                        <div class="drink-price">250 / 3,500 บาท</div>
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- NON ALCOHOLIC -->
+
+            <div class="menu-category">
+
+                <div class="menu-category-heading">
+
+                    <div>
+                        <p class="eyebrow">
+                            NON-ALCOHOLIC
+                        </p>
+
+                        <h3>
+                            เครื่องดื่มไม่มีแอลกอฮอล์
+                        </h3>
+                    </div>
+
+                </div>
+
+                <div class="drink-grid">
+
+                    <article class="drink-card">
+                        <p class="drink-number">01</p>
+                        <h3>LEMON SODA</h3>
+                        <p>เลมอนสด, โซดา</p>
+                        <div class="drink-price">150 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">02</p>
+                        <h3>YUZU TONIC</h3>
+                        <p>ยูซุ, โทนิก</p>
+                        <div class="drink-price">150 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">03</p>
+                        <h3>PASSION FRUIT SODA</h3>
+                        <p>เสาวรส, โซดา</p>
+                        <div class="drink-price">150 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">04</p>
+                        <h3>SHIRLEY TEMPLE</h3>
+                        <div class="drink-price">150 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">05</p>
+                        <h3>HONEY LEMON</h3>
+                        <p>น้ำผึ้ง, เลมอน</p>
+                        <div class="drink-price">150 บาท</div>
+                    </article>
+
+                    <article class="drink-card">
+                        <p class="drink-number">06</p>
+                        <h3>SOFT DRINKS</h3>
+                        <div class="drink-price">80 บาท</div>
+                    </article>
+
+                </div>
+
+            </div>
+
         </div>
 
     </section>
 
 
     <!-- ABOUT -->
+
     <section class="about" id="about">
 
         <h2>
             More than<br>
-            <span>a coffee shop.</span>
+            <span>a bar.</span>
         </h2>
 
         <div class="about-text">
+
             <p>
-                LEMON BAR เกิดจากความคิดง่ายๆ ว่า
-                ร้านหนึ่งร้านไม่จำเป็นต้องมีเพียงบรรยากาศเดียว
+                LEMON BAR เกิดจากความคิดง่าย ๆ ว่า
+                บาร์ที่ดีไม่จำเป็นต้องเสียงดังเสมอไป
             </p>
 
             <p>
-                ที่นี่คุณสามารถเริ่มต้นวันด้วยกาแฟ
-                นั่งทำงานในช่วงบ่าย เล่นเกมกับเพื่อน
-                อ่านหนังสือในห้องเงียบ
-                และจบวันด้วยเครื่องดื่มดีๆ
+                เราเชื่อในเครื่องดื่มที่ทำอย่างตั้งใจ
+                เพลง Acid Jazz ที่เปิดยาวตลอดค่ำคืน
+                แสงไฟสลัว ๆ และบทสนทนาดี ๆ
+                ที่เกิดขึ้นหลังพระอาทิตย์ตก
             </p>
+
+            <p>
+                ไม่มีเวลาเร่งรีบ
+                ไม่มีเหตุผลต้องรีบกลับ
+                Take a seat.
+                Order a drink.
+                Stay awhile.
+            </p>
+
         </div>
 
     </section>
 
 
     <!-- CONTACT -->
+
     <section class="contact" id="contact">
 
-        <p class="eyebrow">COME FIND US</p>
+        <p class="eyebrow">
+            THE BAR · AFTER DARK
+        </p>
 
-        <h2>See you at LEMON BAR</h2>
+        <h2>
+            See you<br>
+            <span>tonight.</span>
+        </h2>
 
-        <a href="https://discord.gg/6SDGmkXd9h" target="_blank" class="button primary">
-            พาฉันไปหน่อย
+        <p>
+            เปิดแก้วแรกเมื่อพระอาทิตย์ตก
+        </p>
+
+        <a
+            href="https://discord.gg/6SDGmkXd9h"
+            target="_blank"
+            rel="noopener"
+            class="button primary"
+        >
+            เข้าสู่ LEMON BAR
         </a>
 
     </section>
@@ -1004,6 +1243,10 @@ footer small {
 
 
 <footer>
+
+    <div class="footer-logo">
+        LEMON<span>BAR™</span>
+    </div>
 
     <small>
         © 2026 LEMON BAR™ by พรรคก้าวใหม่
